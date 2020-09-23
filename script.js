@@ -126,14 +126,13 @@ function generatePassword() {
   if (lowerVar) {
     possibleCharacters += lower;
   }
+  console.log(possibleCharacters);
 
   for (var i = 0; i < characterLength; i++) {
     password +=
       possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)];
   }
-
-  passwordText.value = password;
-
+  return password;
   console.log(password);
 }
 
