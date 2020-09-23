@@ -84,9 +84,10 @@ function generatePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-var reload = document.location.reload();
+// var reload = document.location.reload();
 
-generateBtn.addEventListener("mouseout", reload);
+// generateBtn.addEventListener("mouseout", reload);
+
 // David's thoughts: create the prompts first for questions then store the values then apply them to the password before displaying the password
 
 // GIVEN I need a new, secure password
