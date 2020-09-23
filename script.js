@@ -19,7 +19,7 @@ function generatePassword() {
   var possibleCharacters = [""];
   var password = "";
   var characterLength = parseInt(
-    prompt("How long do you want the Password to be?")
+    prompt("How long do you want the password to be?")
   );
   console.log(characterLength);
   if (isNaN(characterLength) === true) {
