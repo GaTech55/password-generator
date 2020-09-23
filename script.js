@@ -4,6 +4,9 @@ var numberVar = ["0123456789"];
 var upper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 var lower = ["abcdefghijklmnopqrstuvwxyz"];
 var symbols = ["!#$%&'()*+,-./:;<=>?@[]^_`{|}~"];
+
+var possibleCharacters = [""];
+var password = [""];
 // var numberVar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 // var upper = [
 //   "A",
@@ -62,9 +65,6 @@ var symbols = ["!#$%&'()*+,-./:;<=>?@[]^_`{|}~"];
 //   "z",
 // ];
 // var symbols = [" .*"];
-
-var possibleCharacters = [""];
-//add variables for upper, lower and special
 
 // Write password to the #password input
 function writePassword() {
