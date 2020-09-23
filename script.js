@@ -1,7 +1,65 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var numberVar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var possibleCharacters = "";
+var upper = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var lower = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var symbols = [""];
+
+var possibleCharacters = [""];
 //add variables for upper, lower and special
 
 // Write password to the #password input
@@ -13,17 +71,19 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var length = parseInt(prompt("How long do you want the Password to be?"));
-  console.log(length);
-  if (isNaN(length) === true) {
+  var characterLength = parseInt(
+    prompt("How long do you want the Password to be?")
+  );
+  console.log(characterLength);
+  if (isNaN(characterLength) === true) {
     alert("Password length must be provided as a number.");
     return;
   }
-  if (length < 8) {
+  if (characterLength < 8) {
     alert("Password length has to be greater than 8 characters.");
     return;
   }
-  if (length > 128) {
+  if (characterLength > 128) {
     alert("Password length has to be less than 129 characters.");
     return;
   }
@@ -55,9 +115,29 @@ function generatePassword() {
     return;
   }
   //create object (called something like password options).  all of the options/variables will be in the object.  eventually another function will be called random which will randomize the password options.
+  if (specialCharacters) {
+    possibleCharacters += symbols;
+  }
+  if (specialCharacters) {
+    possibleCharacters += numberVar;
+  }
+  if (specialCharacters) {
+    possibleCharacters += upper;
+  }
+  if (specialCharacters) {
+    possibleCharacters += lower;
+  }
 
-  return "This will be replaced by my generated password.";
+  for (var i = 0; i < characterLength; i++) {
+    password +=
+      possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)];
+  }
+
+  passwordText.value = password;
+
+  console.log(password);
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
