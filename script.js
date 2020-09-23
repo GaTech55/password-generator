@@ -1,9 +1,9 @@
-// Assignment Code
+// Assignment Code for variables
 var generateBtn = document.querySelector("#generate");
 var numberVar = ["0123456789"];
 var upper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 var lower = ["abcdefghijklmnopqrstuvwxyz"];
-var symbols = ["!#$%&'()*+,-./:;<=>?@[]^_`{|}~"];
+var symbols = ["!#$%&'\"\\()*+,-./:;<=>?@[]^_`{|}~"];
 
 var possibleCharacters = [""];
 var password = [""];
@@ -15,15 +15,18 @@ function writePassword() {
 
   passwordText.value = password;
 }
+// Created generatePassword function
 function generatePassword() {
+  // Added blank variables for possibleCharacters and password to clear previous runs through the code
   var possibleCharacters = [""];
   var password = "";
+  // Variable created to prompt for the password length which also confirms that the value should be an integer.  If then conditional added to verify that the number is between 8 and 128 and is not null.
   var characterLength = parseInt(
     prompt("How long do you want the password to be?")
   );
   console.log(characterLength);
   if (isNaN(characterLength) === true) {
-    alert("Password length must be provided as a number.");
+    alert("Password length must be provided as a number and not empty.");
     return;
   }
   if (characterLength < 8) {
@@ -34,6 +37,7 @@ function generatePassword() {
     alert("Password length has to be less than 129 characters.");
     return;
   }
+  //Created a variable to ask confirming questions for special characters, numbers, upper case and lower case
   var specialCharacters = confirm(
     "Should your password contain any special characters?\n Yes = OK  No = Cancel"
   );
@@ -45,11 +49,12 @@ function generatePassword() {
   var upperVar = confirm(
     "Should your password contain any Upper case characters?\n Yes = OK  No = Cancel"
   );
-  console.log("Special Character: " + upperVar);
+  console.log("Upper Case: " + upperVar);
   var lowerVar = confirm(
     "Should your password contain any Lower case characters?\n Yes = OK  No = Cancel"
   );
-  console.log("Special Character: " + lowerVar);
+  console.log("Lower Case: " + lowerVar);
+  //Checking the if then conditional if all confirms are false then provide the alert message
   if (
     upperVar === false &&
     lowerVar === false &&
@@ -61,7 +66,7 @@ function generatePassword() {
     );
     return;
   }
-  //create object (called something like password options).  all of the options/variables will be in the object.  eventually another function will be called random which will randomize the password options.
+  //For each if then conditional checking to see if the values are true and if they are then adding the arrays above into the empty possibleCharacters variable.
   if (specialCharacters) {
     possibleCharacters += symbols;
   }
@@ -75,7 +80,7 @@ function generatePassword() {
     possibleCharacters += lower;
   }
   console.log(possibleCharacters);
-
+  //For loop created for the random possibleCharacters which also takes into consideration the length.  Returns the password and console logs.
   for (var i = 0; i < characterLength; i++) {
     password +=
       possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)];
@@ -86,24 +91,3 @@ function generatePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-// var reload = document.location.reload();
-
-// generateBtn.addEventListener("mouseout", reload);
-
-// David's thoughts: create the prompts first for questions then store the values then apply them to the password before displaying the password
-
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters (DONE)
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
