@@ -16,6 +16,8 @@ function writePassword() {
   passwordText.value = password;
 }
 function generatePassword() {
+  var possibleCharacters = [""];
+  var password = "";
   var characterLength = parseInt(
     prompt("How long do you want the Password to be?")
   );
@@ -25,7 +27,7 @@ function generatePassword() {
     return;
   }
   if (characterLength < 8) {
-    alert("Password length has to be greater than 8 characters.");
+    alert("Password length has to be greater than 7 characters.");
     return;
   }
   if (characterLength > 128) {
