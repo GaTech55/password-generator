@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var numberVar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var possibleCharacters = "";
 //add variables for upper, lower and special
 
 // Write password to the #password input
@@ -54,6 +55,7 @@ function generatePassword() {
     return;
   }
   //create object (called something like password options).  all of the options/variables will be in the object.  eventually another function will be called random which will randomize the password options.
+
   return "This will be replaced by my generated password.";
 }
 // Add event listener to generate button
