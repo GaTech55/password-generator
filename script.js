@@ -118,13 +118,13 @@ function generatePassword() {
   if (specialCharacters) {
     possibleCharacters += symbols;
   }
-  if (specialCharacters) {
+  if (numericVar) {
     possibleCharacters += numberVar;
   }
-  if (specialCharacters) {
+  if (upperVar) {
     possibleCharacters += upper;
   }
-  if (specialCharacters) {
+  if (lowerVar) {
     possibleCharacters += lower;
   }
 
