@@ -57,7 +57,7 @@ var lower = [
   "y",
   "z",
 ];
-var symbols = [""];
+var symbols = [" .*"];
 
 var possibleCharacters = [""];
 //add variables for upper, lower and special
@@ -69,7 +69,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
 function generatePassword() {
   var characterLength = parseInt(
     prompt("How long do you want the Password to be?")
@@ -88,19 +87,19 @@ function generatePassword() {
     return;
   }
   var specialCharacters = confirm(
-    "Should your password contain any special characters?"
+    "Should your password contain any special characters?\n Yes = OK  No = Cancel"
   );
   console.log("Special Character: " + specialCharacters);
   var numericVar = confirm(
-    "Should your password contain any numeric characters?"
+    "Should your password contain any numeric characters?\n Yes = OK  No = Cancel"
   );
   console.log("Numeric: " + numericVar);
   var upperVar = confirm(
-    "Should your password contain any Upper case characters?"
+    "Should your password contain any Upper case characters?\n Yes = OK  No = Cancel"
   );
   console.log("Special Character: " + upperVar);
   var lowerVar = confirm(
-    "Should your password contain any Lower case characters?"
+    "Should your password contain any Lower case characters?\n Yes = OK  No = Cancel"
   );
   console.log("Special Character: " + lowerVar);
   if (
