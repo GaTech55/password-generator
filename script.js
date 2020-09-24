@@ -47,11 +47,11 @@ function generatePassword() {
   );
   console.log("Numeric: " + numericVar);
   var upperVar = confirm(
-    "Should your password contain any Upper case characters?\n Yes = OK  No = Cancel"
+    "Should your password contain any upper case characters?\n Yes = OK  No = Cancel"
   );
   console.log("Upper Case: " + upperVar);
   var lowerVar = confirm(
-    "Should your password contain any Lower case characters?\n Yes = OK  No = Cancel"
+    "Should your password contain any lower case characters?\n Yes = OK  No = Cancel"
   );
   console.log("Lower Case: " + lowerVar);
   //Checking the if then conditional if all confirms are false then provide the alert message
