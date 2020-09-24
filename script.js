@@ -19,7 +19,7 @@ function writePassword() {
 function generatePassword() {
   // Added blank variables for possibleCharacters and password to clear previous runs through the code
   var possibleCharacters = [""];
-  var password = "";
+  var password = [""];
   // Variable created to prompt for the password length which also confirms that the value should be an integer.  If then conditional added to verify that the number is between 8 and 128 and is not null.
   var characterLength = parseInt(
     prompt("How long do you want the password to be?")
